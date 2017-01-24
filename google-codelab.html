@@ -236,7 +236,7 @@ prevent syntax highlighting code blocks, respectively:
 
         /**
          * Current step index, 0-based.
-         * `location.hash` is synced with this number.
+         * (disabled) `location.hash` is synced with this number.
          */
         selected: {
           type: Number,
@@ -360,11 +360,11 @@ prevent syntax highlighting code blocks, respectively:
 
       ready: function() {
         // TODO: cannot be done on prototype.
-        // SEe https://github.com/PolymerElements/iron-a11y-keys-behavior/issues/19
+        // See https://github.com/PolymerElements/iron-a11y-keys-behavior/issues/19
         this.keyEventTarget = /** @type {!HTMLBodyElement} */(document.body);
 
         // select the step early, before localStorage is loaded
-        this._updateStepIndexFromUrl();
+        //this._updateStepIndexFromUrl();
       },
 
       _onStepsChanged: function() {
@@ -421,7 +421,7 @@ prevent syntax highlighting code blocks, respectively:
         var step = this.steps[this.selected];
         step.active = true;
 
-        location.hash = this.selected.toString();
+        //location.hash = this.selected.toString();
 
         this.fire('google-codelab-step', {index: this.selected, step: step});
 
